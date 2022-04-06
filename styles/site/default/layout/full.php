@@ -92,42 +92,29 @@
                                         <a href="<?php echo site_url('aboutus') ?>">Hakkımızda </a>
                                     </li>
                                     <li>
-                                        <a href="#"> Services <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                                        <a href="#"> Hizmetlerimiz <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                                         <ul>
-                                            <?php $categories = $this->db->get('categories')->result(); ?>
+                                            <li>
+                                                <a href="/post/index/8"> Su Arıtma Servisi</a>
+                                            </li>
+                                            <li>
+                                                <a href="/post/index/7"> Su Arıtma Cihazı Periyodik Bakım</a>
+                                            </li>
 
-                                            <?php if ($categories): ?>
-                                                <?php foreach ($categories as $row): ?>
-                                                    <li>
-                                                        <a href="#"> <?php echo $row->title ?></a>
-                                                        <ul>
-                                                            <?php $services = $this->db->where('category_id', $row->category_id)->get('services')->result(); ?>
-                                                            <?php if ($services): ?>
-                                                                <?php foreach ($services as $row_): ?>
-                                                                    <li>
-                                                                        <a href="<?php echo site_url('service/index/' . $row_->service_id) ?>">  <?php echo $row_->title ?> </a>
-
-                                                                    </li>
-                                                                <?php endforeach; ?>
-                                                            <?php endif; ?>
-                                                        </ul>
-                                                    </li>
-                                                <?php endforeach; ?>
-                                            <?php endif; ?>
 
                                         </ul>
                                     </li>
+<!--                                    <li>-->
+<!--                                        <a href="--><?php //echo site_url('projects') ?><!--">Portfolio </a>-->
+<!--                                    </li>-->
                                     <li>
-                                        <a href="<?php echo site_url('projects') ?>">Portfolio </a>
+                                        <a href="<?php echo site_url('news') ?>">Blog </a>
                                     </li>
                                     <li>
-                                        <a href="<?php echo site_url('news') ?>">News </a>
+                                        <a href="<?php echo site_url('faqs') ?>">Sıkça Sorulan Sorular </a>
                                     </li>
                                     <li>
-                                        <a href="<?php echo site_url('faqs') ?>">Faqs </a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo site_url('home/contactus') ?>">Contact Us</a>
+                                        <a href="<?php echo site_url('home/contactus') ?>">İletişim</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -219,7 +206,7 @@
                         </div>
                         <div class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
                             <div class="footer-widget">
-                                <h3 class="footer-widget-head">Our Services</h3>
+                                <h3 class="footer-widget-head">Hizmetlerimiz</h3>
                                 <ul>
                                     <?php if ($categories): ?>
                                         <?php foreach ($categories as $row): ?>
@@ -233,7 +220,7 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div class="footer-widget">
-                                <h3 class="footer-widget-head">Recent Posts</h3>
+                                <h3 class="footer-widget-head">Son Yazılar</h3>
                                 <ul>
                                     <?php $posts = $this->db->limit('6')->get('blog')->result(); ?>
                                     <?php if ($posts): ?>
@@ -248,12 +235,11 @@
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                             <div class="footer-widget footer-contact">
-                                <h3 class="footer-widget-head"> Contact Info</h3>
+                                <h3 class="footer-widget-head"> İletişim Bilgilerimiz</h3>
                                 <ul>
                                     <li> <i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:<?php echo config('webmaster_email') ?>"><?php echo config('webmaster_email') ?> </a>  </li>
                                     <li> <i class="fa fa-phone" aria-hidden="true"></i> <?php echo config('phone') ?>   </li>
                                     <li> <i class="fa fa-whatsapp" aria-hidden="true"></i> <?php echo config('whatsapp') ?> </li>
-                                    <li> <i class="fa fa-fax" aria-hidden="true"></i> <?php echo config('fax') ?>  </li>
                                     <li> <i class="fa fa-home" aria-hidden="true"></i> <?php echo config('address') ?>  </li>
                                 </ul>
                             </div>
@@ -266,13 +252,12 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <ul class="footer-menu">
-                                <li><a href="<?php echo site_url('aboutus') ?>">About us</a></li>
-                                <li><a href="<?php echo site_url('projects') ?>"> Portfolio</a></li>
-                                <li><a href="<?php echo site_url('news') ?>"> News</a></li>
-                                <li><a href="<?php echo site_url('home/contactus') ?>"> Contact Us</a></li>
-                                <?php foreach ($this->db->get('pages')->result() as $row): ?>
-                                    <li><a href="<?php echo site_url('page/' . $row->page_id . '-' . permalink($row->title)) ?>"> <?php echo $row->title ?></a></li>
-                                <?php endforeach ?>
+                                <li><a href="<?php echo site_url('aboutus') ?>">Hakkımızda</a></li>
+                                <li><a href="<?php echo site_url('news') ?>"> Blog</a></li>
+                                <li><a href="<?php echo site_url('home/contactus') ?>"> İletişim</a></li>
+<!--                                --><?php //foreach ($this->db->get('pages')->result() as $row): ?>
+<!--                                    <li><a href="--><?php //echo site_url('page/' . $row->page_id . '-' . permalink($row->title)) ?><!--"> --><?php //echo $row->title ?><!--</a></li>-->
+<!--                                --><?php //endforeach ?>
                             </ul>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
