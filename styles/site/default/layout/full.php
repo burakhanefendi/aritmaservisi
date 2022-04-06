@@ -70,7 +70,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="logo-cont">
-                            <a href="<?php echo site_url() ?>" class="logo"><img src="<?php echo config('logo') ?>" alt="<?php echo config('title') ?> " title="<?php echo config('title') ?>" ></a>
+                            <a href="<?php echo site_url() ?>" class="logo"><img src="/styles/site/default/assets/images/su-aritma-logo.png" alt="<?php echo config('title') ?> " title="<?php echo config('title') ?>" ></a>
                         </div>
 
                         <div class="navbar-header">
