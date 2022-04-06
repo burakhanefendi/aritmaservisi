@@ -1,0 +1,10 @@
+.page-container .main-content .page-title .breadcrumb-env {
+    float: left;
+    padding-left: 30px;
+}
+.list-inline {
+    display: inline-block;
+}
+.page-container .main-content .page-title .breadcrumb-env .breadcrumb {
+    display: inline-block;
+}
